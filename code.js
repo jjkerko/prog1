@@ -1,31 +1,28 @@
-const { expect } = require('chai');
-const { describe } = require('mocha');
-const { factorial } = require('./code.js');
+const chai = await import('chai');
+const { expect } = chai;
 
+// Creation du fonction removeWords qui va nous permettre de supprimer les mots indésirés
 const removeWords = function(original, wordsToRemove) {
     return wordsToRemove.reduce((str, word) => {
       const regex = new RegExp(`\\b${word}\\b`, 'g');
       return str.replace(regex, '').replace(/\s+/g, ' ').trim();
     }, original);
   };
-  
-  // Tests unitaires avec Mocha et Chai
-  const { expect } = require('chai');
-  
+ // Voici maintenant les différents tests à faire pour verifier si cette fonction est bien fonctionnel
   describe('removeWords', function() {
     it('doit supprimer les mots spécifiés', function() {
-      expect(removeWords("Hello, ceci est un test", ["ceci", "un"]))
-        .to.equal("Hello, est test");
+      expect(removeWords("Kaiza, ito  dia test fotsiny", ["ito", "test"]))
+        .to.equal("Kaiza, dia fotsiny");
     });
   
     it('doit être sensible à la casse', function() {
-      expect(removeWords("Hello Java", ["java"]))
-        .to.equal("Hello Java");
+      expect(removeWords("Hello Toto", ["toto"]))
+        .to.equal("Hello Toto");
     });
   
     it('doit gérer les mots multiples et les espaces', function() {
-      expect(removeWords("Ceci est un test avec des mots à supprimer", ["est", "avec", "des", "à"]))
-        .to.equal("Ceci un test mots supprimer");
+      expect(removeWords("Coucou dia aona inona ny vaovao anao azafady", ["dia", "ny", "anao", "azafady"]))
+        .to.equal("Coucou aona inona vaovao");
     });
   
     it('doit retourner la chaîne originale si aucun mot n\'est à supprimer', function() {

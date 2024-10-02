@@ -2,6 +2,7 @@
   "dependencies": {
     "express": "^4.21.0"
   },
+  "type":"module",
   "name": "json",
   "version": "1.0.0",
   "main": "index.js",
