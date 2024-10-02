@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "name": "json",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "mocha": "^10.7.3",
+    "nyc": "^17.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
